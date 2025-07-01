@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Profile - VTU University</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <style>
+    #previewImg {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 50%;
+      box-shadow: 0 0 5px rgba(0,0,0,0.2);
+    }
+    .badge-primary {
+      background: linear-gradient(50deg, #7226ff 0%, #160078, #010030 100%);
+    }
+    .offcanvas-end {
+      position: fixed !important;
+      top: 0;
+      right: 0;
+      height: 100%;
+      width: 250px;
+      z-index: 1045;
+      background-color: #fff;
+      transition: transform 0.4s ease-in-out, opacity 0.4s ease;
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    .offcanvas-end.show {
+      transform: translateX(0%);
+      opacity: 1;
+    }
+  </style>
+</head>
+<body class="bg-light">
+
+  <!-- ✅ Navbar -->
+  <nav class="navbar navbar-dark badge-primary fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand text-white" href="#">VIMEANTECH UNIVERSITY</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ✅ Offcanvas Menu -->
+  <div class="offcanvas offcanvas-end fade" id="offcanvasNavbar">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title">Menu</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+    </div>
+
+    <div class="text-center border-bottom pb-3">
+      <a href="profile.html" class="text-decoration-none text-dark">
+        <img id="profilePic" src="https://via.placeholder.com/80" alt="Profile" class="rounded-circle shadow mb-2" width="80" height="80" />
+        <h6 class="mb-0" id="profileNameDisplay">AH LY SONG</h6>
+        <small class="text-muted">View Profile</small>
+      </a>
+    </div>
+
+    <div class="offcanvas-body">
+      <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+        <li class="nav-item"><a class="nav-link active" href="VTU_University.html#Home">Home</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Student</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="List_of_all_Student.html">List of all students</a></li>
+            <li><a class="dropdown-item" href="L">List of enrolled students</a></li>
+            <li><a class="dropdown-item" href="#">List of students who dropped out</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Subject</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Information technology</a></li>
+            <li><a class="dropdown-item" href="#">Business Administration</a></li>
+            <li><a class="dropdown-item" href="#">Medicine</a></li>
+            <li><a class="dropdown-item" href="#">Natural Sciences</a></li>
+            <li><a class="dropdown-item" href="#">Law</a></li>
+            <li><a class="dropdown-item" href="#">Architecture & Civil Engineering</a></li>
+            <li><a class="dropdown-item" href="#">Education</a></li>
+            <li><a class="dropdown-item" href="#">Aris Humanities</a></li>
+          </ul>
+        </li>
+      </ul>
+      <form class="d-flex mt-3" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" />
+        <button class="btn btn-outline-primary" type="submit">Search</button>
+      </form>
+      <div class="mt-2">
+        <a href="index.html" class="btn btn-primary">Exit</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ✅ Main Profile Form -->
+  <div class="container py-5 mt-5">
+    <h2 class="mb-4 text-center">Update Profile</h2>
+
+    <div class="text-center mb-4">
+      <img id="previewImg" src="https://via.placeholder.com/80" alt="Profile Preview" />
+      <h5 id="previewName" class="mt-2">Your Name</h5>
+    </div>
+
+    <form id="profileForm" class="bg-white p-4 rounded shadow-sm">
+      <div class="row mb-3">
+        <div class="col-md-6">
+          <label class="form-label">First Name</label>
+          <input type="text" class="form-control" id="firstName" required />
+        </div>
+        <div class="col-md-6">
+          <label class="form-label">Last Name</label>
+          <input type="text" class="form-control" id="lastName" required />
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col-md-6">
+          <label class="form-label">Sex</label>
+          <select class="form-select" id="sex" required>
+            <option selected disabled>Select sex</option>
+            <option>Male</option>
+            <option>Female</option>
+          </select>
+        </div>
+        <div class="col-md-6">
+          <label class="form-label">Age</label>
+          <input type="number" class="form-control" id="age" min="1" required />
+        </div>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Date of Birth</label>
+        <input type="date" class="form-control" id="dob" required />
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Place of Birth</label>
+        <input type="text" class="form-control" id="birthPlace" required />
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Current Address</label>
+        <input type="text" class="form-control" id="currentAddress" required />
+      </div>
+      <div class="mb-3">
+        <label class="form-label">University Name</label>
+        <input type="text" class="form-control" id="university" required />
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Email</label>
+        <input type="email" class="form-control" id="email" required />
+      </div>
+
+      <!-- 👁️ Password with toggle -->
+      <div class="mb-3 position-relative">
+        <label class="form-label">Password</label>
+        <input type="password" class="form-control" id="password" required />
+        <i class="bi bi-eye position-absolute top-50 end-0 translate-middle-y me-3" style="cursor: pointer;" onclick="togglePassword('password', this)"></i>
+      </div>
+      <div class="mb-3 position-relative">
+        <label class="form-label">Confirm Password</label>
+        <input type="password" class="form-control" id="confirmPassword" required />
+        <i class="bi bi-eye position-absolute top-50 end-0 translate-middle-y me-3" style="cursor: pointer;" onclick="togglePassword('confirmPassword', this)"></i>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Upload Profile Image</label>
+        <input type="file" class="form-control" id="profileImgFile" accept="image/*" />
+      </div>
+
+      <button type="submit" class="btn btn-primary">Save</button>
+      <a href="VTU_University.html" class="btn btn-secondary ms-2">Back</a>
+    </form>
+  </div>
+
+  <div class="modal fade" id="saveSuccessModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content text-center">
+        <div class="modal-header">
+          <h5 class="modal-title text-success">Success</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <p class="mb-0">Your profile has been saved successfully!</p>
+        </div>
+        <div class="modal-footer justify-content-center">
+          <button class="btn btn-primary" data-bs-dismiss="modal">OK</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    const firstName = document.getElementById('firstName');
+    const lastName = document.getElementById('lastName');
+    const sex = document.getElementById('sex');
+    const age = document.getElementById('age');
+    const dob = document.getElementById('dob');
+    const birthPlace = document.getElementById('birthPlace');
+    const currentAddress = document.getElementById('currentAddress');
+    const university = document.getElementById('university');
+    const email = document.getElementById('email');
+    const password = document.getElementById('password');
+    const confirmPassword = document.getElementById('confirmPassword');
+    const imgInput = document.getElementById('profileImgFile');
+    const previewName = document.getElementById('previewName');
+    const previewImg = document.getElementById('previewImg');
+
+    document.addEventListener('DOMContentLoaded', () => {
+      firstName.value = localStorage.getItem('firstName') || '';
+      lastName.value = localStorage.getItem('lastName') || '';
+      sex.value = localStorage.getItem('sex') || '';
+      age.value = localStorage.getItem('age') || '';
+      dob.value = localStorage.getItem('dob') || '';
+      birthPlace.value = localStorage.getItem('birthPlace') || '';
+      currentAddress.value = localStorage.getItem('currentAddress') || '';
+      university.value = localStorage.getItem('university') || '';
+      email.value = localStorage.getItem('email') || '';
+      previewName.textContent = `${firstName.value} ${lastName.value}`.trim() || 'Your Name';
+      previewImg.src = localStorage.getItem('profileImg') || 'https://via.placeholder.com/80';
+
+      const offcanvas = document.getElementById('offcanvasNavbar');
+      function updateProfilePreview() {
+        const name = localStorage.getItem('firstName') || 'AH LY SONG';
+        const last = localStorage.getItem('lastName') || '';
+        const img = localStorage.getItem('profileImg') || 'https://via.placeholder.com/80';
+        document.getElementById('profileNameDisplay').textContent = `${name} ${last}`.trim();
+        document.getElementById('profilePic').src = img;
+      }
+      updateProfilePreview();
+      offcanvas.addEventListener('show.bs.offcanvas', updateProfilePreview);
+    });
+
+    [firstName, lastName].forEach(input => {
+      input.addEventListener('input', () => {
+        const name = `${firstName.value} ${lastName.value}`.trim();
+        previewName.textContent = name || 'Your Name';
+      });
+    });
+
+    imgInput.addEventListener('change', () => {
+      const file = imgInput.files[0];
+      if (file && file.type.startsWith('image/')) {
+        const reader = new FileReader();
+        reader.onload = e => previewImg.src = e.target.result;
+        reader.readAsDataURL(file);
+      }
+    });
+
+    document.getElementById('profileForm').addEventListener('submit', e => {
+      e.preventDefault();
+      if (password.value !== confirmPassword.value) {
+        alert('Passwords do not match!');
+        return;
+      }
+
+      const saveData = (imgData) => {
+        localStorage.setItem('firstName', firstName.value.trim());
+        localStorage.setItem('lastName', lastName.value.trim());
+        localStorage.setItem('sex', sex.value);
+        localStorage.setItem('age', age.value);
+        localStorage.setItem('dob', dob.value);
+        localStorage.setItem('birthPlace', birthPlace.value.trim());
+        localStorage.setItem('currentAddress', currentAddress.value.trim());
+        localStorage.setItem('university', university.value.trim());
+        localStorage.setItem('email', email.value.trim());
+        localStorage.setItem('password', password.value);
+        localStorage.setItem('profileImg', imgData);
+
+        const modal = new bootstrap.Modal(document.getElementById('saveSuccessModal'));
+        modal.show();
+      };
+
+      const file = imgInput.files[0];
+      if (file && file.type.startsWith('image/')) {
+        const reader = new FileReader();
+        reader.onload = e => saveData(e.target.result);
+        reader.readAsDataURL(file);
+      } else {
+        saveData(previewImg.src);
+      }
+    });
+
+    function togglePassword(id, el) {
+      const input = document.getElementById(id);
+      if (input.type === "password") {
+        input.type = "text";
+        el.classList.remove("bi-eye");
+        el.classList.add("bi-eye-slash");
+      } else {
+        input.type = "password";
+        el.classList.remove("bi-eye-slash");
+        el.classList.add("bi-eye");
+      }
+    }
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
